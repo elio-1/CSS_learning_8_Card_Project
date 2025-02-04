@@ -145,17 +145,16 @@ footer {
 
 /* || LARGE */
 @media screen and (min-width: 992px) {
-  body {
-    background-color: firebrick;
-    background-image: radial-gradient(whitesmoke, firebrick);
+  .card {
+    width: min(100%, 400px);
   }
+  
 }
 
 /* || XL  */
 @media screen and (min-width: 1200px) {
-  body {
-    background-color: rebeccapurple;
-    background-image: radial-gradient(whitesmoke, rebeccapurple);
+  .card {
+    width: min(calc(33% - 1rem), 500px);
   }
 }
 
