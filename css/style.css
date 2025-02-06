@@ -52,14 +52,14 @@ nav {
   display: flex;
   justify-content: space-evenly;
 }
-
-nav a, nav a:visited{
-  color: #000;
+/*  :is vs :where = is has higher specificity
+nav :is(a:hover, a:visited, a:link, a:focus, a:active){
+  color: #232635;
+} */
+nav :any-link{
+  color: #611350;
 }
 
-nav a:hover, nav a:focus, nav a:active{
-  color: #233d61;
-}
 
 main {
   flex-grow: 1;
@@ -86,6 +86,14 @@ footer {
   align-items: center;
 }
 
+.card:target{
+  box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.096);
+}
+/* nth-child in the html NOT the one after the css is applied */
+.card:nth-child(odd) {
+  background-color: rgb(177, 231, 231);
+}
+
 .card figure {
   display: flex;
   flex-flow: column nowrap;
@@ -100,11 +108,23 @@ footer {
   margin: 1rem;
 }
 
+.card img:not([alt]){
+  border: 10px solid red;
+}
 .card figcaption {
   font-weight: bolder;
   font-size: 2rem;
   margin: 1rem;
   text-align: center;
+}
+
+.card figcaption::after {
+  content: '✨';
+  display: block;
+}
+
+.card figcaption::first-letter {
+  font-size: 3rem;
 }
 
 /* || SMALL */
